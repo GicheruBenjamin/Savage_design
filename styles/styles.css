@@ -1,337 +1,313 @@
-/* ===========================================
-   SAVAGE_DESIGN | STYLESHEET
-   Electric Minimalism Aesthetic
-   =========================================== */
+/* ===============================
+   🌌 SAVAGE DESIGN — GLOBAL STYLE
+   =============================== */
 
-/* ---------- RESET & BASE ---------- */
+/* --- Variables --- */
+:root {
+  --bg-main: #0c0c0f;
+  --bg-panel: #141419;
+  --accent-primary: #00ffff;
+  --accent-secondary: #ff00ff;
+  --text-color: #e5e5e5;
+  --radius: 10px;
+  --transition: all 0.3s ease;
+  --shadow-glow: 0 0 15px rgba(0, 255, 255, 0.4);
+  --max-width: 1400px;
+}
+
+/* --- Base Reset --- */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  html {
-    font-size: 16px;
-    scroll-behavior: smooth;
-  }
-  
-  body {
-    background: radial-gradient(circle at 20% 20%, #111 0%, #000 100%);
-    color: #fff;
-    font-family: 'Poppins', 'Inter', sans-serif;
-    line-height: 1.6;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-  }
-  
-  /* ---------- GLOBAL TOKENS ---------- */
-  :root {
-    --bg-dark: #0a0a0a;
-    --bg-panel: rgba(255, 255, 255, 0.05);
-    --text-main: #ffffff;
-    --text-muted: #9e9e9e;
-    --accent-primary: #00ffff;
-    --accent-secondary: #b026ff;
-    --danger: #ff0044;
-    --radius: 12px;
-    --spacing-unit: 8px;
-    --transition: all 0.3s ease;
-    --shadow-glow: 0 0 15px rgba(0, 255, 255, 0.4);
-  }
-  
-  /* ---------- HEADER ---------- */
-  header {
-    width: 100%;
-    padding: calc(var(--spacing-unit) * 2) calc(var(--spacing-unit) * 4);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background: rgba(10, 10, 10, 0.8);
-    backdrop-filter: blur(8px);
-    position: sticky;
-    top: 0;
-    z-index: 3;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-  }
-  
-  header h1 {
-    font-family: 'Orbitron', sans-serif;
-    font-size: 1.8rem;
-    letter-spacing: 2px;
-    color: var(--accent-primary);
-    text-shadow: var(--shadow-glow);
-  }
-  
-  header a {
-    color: var(--text-main);
-    text-decoration: none;
-    padding: 0.5rem 1.2rem;
-    border: 1px solid var(--accent-primary);
-    border-radius: var(--radius);
-    transition: var(--transition);
-  }
-  
-  header a:hover {
-    background: var(--accent-primary);
-    color: #000;
-    box-shadow: var(--shadow-glow);
-  }
-  
-  /* ---------- HOME PAGE ---------- */
-  .main{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-  .hero {
-    max-width: 800px;
-    margin: 8rem auto;
-    text-align: center;
-    color: var(--text-main);
-    padding: 2rem;
-    background: var(--bg-panel);
-    border-radius: var(--radius);
-    backdrop-filter: blur(6px);
-    box-shadow: 0 0 40px rgba(0, 255, 255, 0.05);
-  }
-  
-  .hero h2 {
-    font-size: 2rem;
-    color: var(--accent-primary);
-    margin-bottom: 1.5rem;
-  }
-  
-  .hero p {
-    color: var(--text-muted);
-    font-size: 1.1rem;
-    line-height: 1.8;
-  }
-  
-  /* ---------- EDITOR LAYOUT ---------- */
-  main {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-areas:
-      "explanation selector"
-      "present playground"
-      "styles playground";
-    gap: 2rem;
-    padding: 2rem 4rem;
-  }
-  
-  section {
-    background: var(--bg-panel);
-    border-radius: var(--radius);
-    padding: 1.5rem;
-    backdrop-filter: blur(4px);
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    box-shadow: 0 0 20px rgba(0, 255, 255, 0.05);
-    transition: var(--transition);
-  }
-  
-  section:hover {
-    border-color: var(--accent-primary);
-    box-shadow: var(--shadow-glow);
-  }
-  
-  /* ---------- SECTION HEADINGS ---------- */
-  section h2 {
-    color: var(--accent-secondary);
-    font-family: 'Orbitron', sans-serif;
-    margin-bottom: 1rem;
-    font-size: 1.2rem;
-    letter-spacing: 1px;
-  }
-  
-  /* ---------- SPECIFIC SECTIONS ---------- */
-  .explanation-section {
-    grid-area: explanation;
-  }
-  
-  .present_elements-section {
-    grid-area: present;
-  }
-  
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--bg-main);
+  color: var(--text-color);
+  font-family: "Poppins", sans-serif;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+a {
+  color: var(--accent-primary);
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+a:hover {
+  color: var(--accent-secondary);
+}
+
+/* ===============================
+   🧭 HEADER
+   =============================== */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 2rem;
+  background: var(--bg-panel);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+header h1 {
+  font-family: "Orbitron", sans-serif;
+  font-size: 1.5rem;
+  color: var(--accent-primary);
+  letter-spacing: 1px;
+}
+
+header a {
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+/* ===============================
+   🏠 HOME PAGE
+   =============================== */
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 85vh;
+}
+
+.hero {
+  max-width: 600px;
+  text-align: center;
+  background: var(--bg-panel);
+  padding: 3rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-glow);
+  transition: var(--transition);
+}
+
+.hero:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 25px rgba(255, 0, 255, 0.3);
+}
+
+.hero h2 {
+  color: var(--accent-primary);
+  margin-bottom: 1rem;
+  font-family: "Orbitron", sans-serif;
+}
+
+.hero strong {
+  color: var(--accent-secondary);
+}
+
+/* ===============================
+   ✨ EDITOR PAGE
+   =============================== */
+
+/* Layout wrapper */
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+/* --- Top Controls (Explainer + Orientation Selector) --- */
+.explanation-section,
+.orientation-selector-section {
+  background: var(--bg-panel);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  width: 100%;
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.05);
+  transition: var(--transition);
+}
+
+.explanation-section:hover,
+.orientation-selector-section:hover {
+  box-shadow: var(--shadow-glow);
+}
+
+/* --- Orientation Selector (shared from earlier design) --- */
+.orientation-selector {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: center;
+  align-items: center;
+  border: none;
+}
+
+.orientation-selector .subheading {
+  width: 100%;
+  text-align: center;
+  font-family: "Orbitron", sans-serif;
+  color: var(--accent-secondary);
+  margin-bottom: 0.75rem;
+}
+
+.orientation-selector .btn {
+  background: transparent;
+  color: var(--accent-primary);
+  border: 1px solid var(--accent-primary);
+  padding: 0.5rem 1.2rem;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: var(--transition);
+  font-weight: 600;
+}
+
+.orientation-selector .btn:hover {
+  background: var(--accent-primary);
+  color: #000;
+  box-shadow: var(--shadow-glow);
+}
+
+/* --- Main Editor Grid (Playground + Side Panels) --- */
+.playground-section {
+  display: grid;
+  grid-template-columns: 260px 1fr 260px;
+  gap: 1rem;
+  width: 100%;
+  align-items: stretch;
+}
+
+.playground-container {
+  background: #000;
+  border-radius: var(--radius);
+  box-shadow: inset 0 0 20px rgba(0, 255, 255, 0.05);
+  position: relative;
+  height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.playground-canvas {
+  width: 90%;
+  height: 90%;
+  background: #111;
+  border-radius: var(--radius);
+}
+
+/* Side Panels */
+.present_elements-section,
+.styles-section {
+  background: var(--bg-panel);
+  border-radius: var(--radius);
+  padding: 1rem;
+  overflow-y: auto;
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.05);
+  transition: var(--transition);
+}
+
+.present_elements-section:hover,
+.styles-section:hover {
+  box-shadow: var(--shadow-glow);
+}
+
+/* --- Element Selector Bottom --- */
+.element-selector {
+  background: var(--bg-panel);
+  border-radius: var(--radius);
+  padding: 1rem;
+  width: 100%;
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.05);
+}
+
+.element-selector-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.6rem;
+}
+
+.element-selector-container button {
+  background: transparent;
+  color: var(--accent-primary);
+  border: 1px solid var(--accent-primary);
+  padding: 0.6rem 1.2rem;
+  border-radius: var(--radius);
+  cursor: pointer;
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+.element-selector-container button:hover {
+  background: var(--accent-primary);
+  color: #000;
+  box-shadow: var(--shadow-glow);
+}
+
+/* ===============================
+   📱 RESPONSIVE BEHAVIOR
+   =============================== */
+@media (max-width: 900px) {
   .playground-section {
-    grid-area: playground;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    grid-template-columns: 1fr;
   }
-  
+
+  .present_elements-section,
   .styles-section {
-    grid-area: styles;
+    display: none; /* hidden on small screens */
   }
-  
-  .element-selector {
-    grid-area: selector;
-  }
-  
-  /* ---------- BUTTONS ---------- */
-  button {
-    background: transparent;
-    color: var(--accent-primary);
-    border: 1px solid var(--accent-primary);
-    padding: 0.6rem 1.2rem;
-    border-radius: var(--radius);
-    font-weight: 600;
-    cursor: pointer;
-    transition: var(--transition);
-  }
-  
-  button:hover {
+
+  /* Add toggle buttons */
+  .playground-section::before,
+  .playground-section::after {
+    content: "☰";
+    position: absolute;
+    top: 10px;
+    font-size: 1.4rem;
     background: var(--accent-primary);
     color: #000;
-    box-shadow: var(--shadow-glow);
-  }
-  
-  /* ---------- CANVAS ---------- */
-  .playground-container {
-    background: rgba(255, 255, 255, 0.02);
+    padding: 0.4rem 0.8rem;
     border-radius: var(--radius);
-    border: 1px dashed var(--accent-secondary);
-    width: 100%;
-    height: 400px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    position: relative;
+    cursor: pointer;
+    z-index: 10;
   }
-  
-  .playground-canvas {
-    width: 95%;
-    height: 95%;
-    background: transparent;
-    cursor: crosshair;
+
+  .playground-section::before {
+    left: 10px;
   }
-  
-  /* ---------- ELEMENT SELECTOR ---------- */
-  .element-selector-container {
-    display: flex;
-    flex-wrap: wrap;
+
+  .playground-section::after {
+    right: 10px;
+  }
+}
+
+@media (max-width: 600px) {
+  header {
+    flex-direction: column;
     gap: 0.5rem;
   }
 
-  /* ---------- ORIENTATION SELECTOR ---------- */
-.orientation-selector-section {
-    background: var(--bg-panel);
-    border-radius: var(--radius);
-    padding: 1.5rem;
-    backdrop-filter: blur(4px);
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    box-shadow: 0 0 20px rgba(0, 255, 255, 0.05);
-    transition: var(--transition);
+  .hero {
+    padding: 2rem;
   }
-  
-  .orientation-selector-section:hover {
-    border-color: var(--accent-primary);
-    box-shadow: var(--shadow-glow);
-  }
-  
-  .orientation-selector {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.75rem;
-    justify-content: center;
-    align-items: center;
-    border: none;
-  }
-  
-  .orientation-selector .subheading {
-    font-family: 'Orbitron', sans-serif;
-    font-size: 1rem;
-    color: var(--accent-secondary);
-    margin-bottom: 1rem;
-    text-align: center;
-    display: block;
-    width: 100%;
-    letter-spacing: 1px;
-  }
-  
+
   .orientation-selector .btn {
-    background: transparent;
-    color: var(--accent-primary);
-    border: 1px solid var(--accent-primary);
-    padding: 0.6rem 1.2rem;
-    border-radius: var(--radius);
-    font-weight: 600;
-    cursor: pointer;
-    transition: var(--transition);
-    font-family: 'Poppins', sans-serif;
-    letter-spacing: 0.5px;
+    width: 100%;
   }
-  
-  .orientation-selector .btn:hover {
-    background: var(--accent-primary);
-    color: #000;
-    box-shadow: var(--shadow-glow);
-    transform: translateY(-2px);
+}
+
+/* ===============================
+   ✨ Utility Animations
+   =============================== */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 rgba(0, 255, 255, 0.4);
   }
-  
-  .orientation-selector .btn:active {
-    animation: pulse 0.4s ease;
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.6);
   }
-  
-  @media (max-width: 600px) {
-    .orientation-selector {
-      flex-direction: column;
-      gap: 0.5rem;
-    }
-  
-    .orientation-selector .btn {
-      width: 100%;
-      text-align: center;
-    }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 rgba(0, 255, 255, 0.4);
   }
-  
-  
-  /* ---------- RESPONSIVE ---------- */
-  @media (max-width: 900px) {
-    main {
-      grid-template-columns: 1fr;
-      grid-template-areas:
-        "explanation"
-        "selector"
-        "playground"
-        "present"
-        "styles";
-      padding: 1rem;
-    }
-  
-    header {
-      flex-direction: column;
-      gap: 0.5rem;
-    }
-  
-    .hero {
-      margin: 4rem 1rem;
-    }
-  }
-  
-  /* ---------- ANIMATIONS ---------- */
-  @keyframes pulse {
-    0% { box-shadow: 0 0 0 rgba(0, 255, 255, 0.4); }
-    50% { box-shadow: 0 0 25px rgba(0, 255, 255, 0.6); }
-    100% { box-shadow: 0 0 0 rgba(0, 255, 255, 0.4); }
-  }
-  
-  button:active {
-    animation: pulse 0.5s ease;
-  }
-  
-  /* ---------- SCROLLBAR CUSTOM ---------- */
-  ::-webkit-scrollbar {
-    width: 8px;
-  }
-  ::-webkit-scrollbar-thumb {
-    background: var(--accent-secondary);
-    border-radius: 4px;
-  }
-  ::-webkit-scrollbar-track {
-    background: #111;
-  }
-  
+}
